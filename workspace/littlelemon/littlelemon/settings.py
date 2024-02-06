@@ -41,7 +41,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'restaurant',
     'rest_framework',
+    'djoser',
+    'rest_framework.authtoken',
 ]
+
+DJOSER={"USER_ID_FIELD":"username"}
+
+# settings.py
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # other authentication classes if needed
+    ],
+    # other DRF settings
+}
+
 
 
 MIDDLEWARE = [
